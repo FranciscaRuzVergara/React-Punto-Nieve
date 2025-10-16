@@ -1,9 +1,19 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import Productos from "./pages/Productos";
+
 
 function App() {
   return (
-    <div className="container mt-5">
-      <h1 className="text-primary">Punto Nieve</h1>          
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="productos" element={<Productos />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
